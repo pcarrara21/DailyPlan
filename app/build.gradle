@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "my.dailyplan"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        buildConfigField "String", "LOCAL_IP", '\"' + getLocalIp("eth1") + '\"'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+        lintOptions {
+            disable 'InvalidPackage'
+        }
+}
+
+// Get the ip address by interface name
+def getLocalIp(String interfaceName) {
+    NetworkInterface iface = NetworkInterface.getByName(interfaceName);
+    for (InterfaceAddress address : iface.getInterfaceAddresses()) {
+        String ip = address.getAddress().getHostAddress()
+        if (ip.length() <= 15) {
+            return ip;
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'de.hdodenhof:circleimageview:1.3.0'
+    compile 'com.getbase:floatingactionbutton:1.10.0'
+    compile 'com.mcxiaoke.volley:library:1.0.18'
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+    compile 'com.android.support:design:22.2.1'
+}

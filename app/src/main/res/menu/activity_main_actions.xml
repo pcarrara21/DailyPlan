@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Search / will display always -->
+    <item android:id="@+id/action_search"
+        android:title="@string/search"
+        android:icon="@drawable/ic_action_search_hdpi"
+        app:showAsAction="ifRoom"
+        app:actionViewClass="android.widget.SearchView" />
+
+    <item android:id="@+id/dialog"
+        android:title="@string/calendar"
+        android:icon="@drawable/ic_action_calendar"
+        app:showAsAction="ifRoom"
+        android:onClick="showDialogYear"/>
+</menu>

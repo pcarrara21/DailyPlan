@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="my.dailyplan.activities.ProposalCreationActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/icon_calendar"
+        android:textColor="@color/white"
+        android:onClick="setDate"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/datePickerButton"
+        android:background="@xml/custombutton"
+        android:textSize="30sp"/>
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_icon="@drawable/ic_save_black"
+        android:layout_gravity="end|bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deleteEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_icon="@drawable/ic_delete_event"
+        android:layout_gravity="end|bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/saveEvent"
+        android:layout_toStartOf="@+id/saveEvent" />
+
+    <Spinner
+        android:id="@+id/pdescr_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/textView9"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/datap"
+        android:id="@+id/textView8"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/codici"
+        android:id="@+id/textView9"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/timePicker"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/note"
+        android:inputType="text"
+        android:layout_above="@+id/deleteEvent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/saveEvent"
+        android:layout_alignEnd="@+id/saveEvent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/note"
+        android:id="@+id/noteLabel"
+        android:layout_above="@+id/note"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/dateView"
+        android:background="@xml/custombutton"
+        android:textColor="@color/white"
+        android:layout_alignBottom="@+id/datePickerButton"
+        android:layout_alignTop="@+id/datePickerButton"
+        android:text="@string/ggmmaa"
+        android:gravity="center_vertical|center"
+        android:layout_toRightOf="@+id/datePickerButton"
+        android:layout_toEndOf="@+id/datePickerButton"
+        android:layout_alignRight="@+id/saveEvent"
+        android:layout_alignEnd="@+id/saveEvent" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/icon_time"
+        android:id="@+id/timePicker"
+        android:layout_below="@+id/datePickerButton"
+        android:layout_marginTop="10dp"
+        android:background="@xml/custombutton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/timeView"
+        android:layout_toStartOf="@+id/timeView"
+        android:onClick="showTimePickerDialog"
+        android:textSize="30sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hhmm"
+        android:id="@+id/timeView"
+        android:layout_alignTop="@+id/timePicker"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_toRightOf="@+id/datePickerButton"
+        android:layout_toEndOf="@+id/datePickerButton"
+        android:layout_below="@+id/dateView"
+        android:background="@xml/custombutton"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="center|center_vertical"
+        android:layout_alignBottom="@+id/timePicker" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nuovo"
+        android:id="@+id/checkCustumProp"
+        android:layout_below="@+id/pdescr_spinner"
+        android:layout_alignRight="@+id/saveEvent"
+        android:layout_alignEnd="@+id/saveEvent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/customProp"
+        android:inputType="text"
+        android:layout_below="@+id/checkCustumProp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:enabled="false"/>
+
+
+</RelativeLayout>
