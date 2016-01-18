@@ -22,6 +22,8 @@ Some of the functionality implemented are:
 7. Client List
 8. Proposal creation, modification and deletion
 
+![screenshot](screenshot.png)
+
 What is the difference between event/proposal?
 A proposal is something not definitve and every user can vote once one every single proposal found in the proper section while an
 event is certain and usually carried out by one single person (e.g. what about a meeting on wednesday? Proposal. Tomorrow I will restart
@@ -31,5 +33,3 @@ This idea can be applied even between families or other non-work groups and mayb
 affiliations.
 
 18-01 UPDATE: A demo is available with limited functionality but ultimate layout.
-
-![screenshot](screenshot.png)
