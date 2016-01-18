@@ -30,4 +30,4 @@ XYZ's router? Event.)
 This idea can be applied even between families or other non-work groups and maybe further enhanced to include multiple group 
 affiliations.
 
-15-01 UPDATE: I just created the repo and it's not fully functional, if you're seeing this.. well thanks for the interest and accept my excuses!
+18-01 UPDATE: A demo is available with limited functionality but ultimate layout.
