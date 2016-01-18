@@ -40,6 +40,10 @@ public class JSONParser {
 
     public String getJSONString(Context context, String urlstring, String[] parName, String[] par, String tag) {
 
+        /*DEMO VERSION*/
+        String jsonString = "";  //inizializzazione del messaggio di ritorno a "error"
+
+        /* DEMO
         String jsonString = "Error";  //inizializzazione del messaggio di ritorno a "error"
         com.squareup.okhttp.Response response;
         if (ConnectionStatus.getInstance(context).isOnline(context)) { //Se il dispositivo è connesso a una rete
@@ -82,6 +86,8 @@ public class JSONParser {
 
         }
         Log.e("JSON_STRING", jsonString);
+        */
+
         return jsonString;
     }
 

@@ -223,6 +223,12 @@ public class ProposalCreationActivity extends AppCompatActivity {
 
     public void onSaveButtonClick(){
 
+            /*DEMO*/
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+            finish();
+
+        /*DEMO VERSION
         boolean createNewCausale = false;
 
         // se lo spinner è vuoto e non è stata inserita nessuna causale personalizzata, il salvataggio viene bloccato
@@ -263,6 +269,7 @@ public class ProposalCreationActivity extends AppCompatActivity {
 
         EventTask eventInsertTask = new EventTask(getApplicationContext());
         eventInsertTask.execute(createNewCausale);
+        */
     }
 
     public void onDeleteButtonClick(){

@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     //Richiesta di immissione delle credenziali
                     Toast.makeText(getApplicationContext(),
-                            "Please enter the credentials!", Toast.LENGTH_LONG)
+                            "Inserire le credenziali.", Toast.LENGTH_LONG)
                             .show();
                 }
             }
@@ -113,9 +113,22 @@ public class LoginActivity extends AppCompatActivity {
         //Tag utilizzato per identificare la richiesta
         String tag_string_req = "req_login";
 
-        pDialog.setMessage("Logging in ...");
+        pDialog.setMessage("Accesso in corso ...");
         showDialog();
 
+        /*DEMO CODE*/
+                //Utente connesso con successo
+                //Creazione di una sessione di login
+                session.setLogin(true);
+                storeCredentials(username, password);
+                hideDialog();
+                //Avvio della MainActivity
+                Intent intent = new Intent(LoginActivity.this,
+                        MainActivity.class);
+                startActivity(intent);
+                finish();
+
+        /* DEMO
         StringRequest strReq = new StringRequest(Method.POST,
                 AppConfig.URL_LOGIN, new Response.Listener<String>() {
 
@@ -179,6 +192,8 @@ public class LoginActivity extends AppCompatActivity {
         };
         // Aggiunta di una richiesta alla coda di richieste
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+        */
+
     }
 
     //Salvataggio di email e password

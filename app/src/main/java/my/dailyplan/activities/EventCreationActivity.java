@@ -130,11 +130,12 @@ public class EventCreationActivity extends AppCompatActivity {
         clients = d.getClient_array();
         causals = d.getCausal_array();
 
-        ClientSpinnerAdapter clientSpinnerAdapter = new ClientSpinnerAdapter(getBaseContext(),R.id.clients_spinner,d.getClient_array());
-        spinnerClients.setAdapter(clientSpinnerAdapter);
+        /*DEMO*/
+                ClientSpinnerAdapter clientSpinnerAdapter = new ClientSpinnerAdapter(getBaseContext(),R.id.clients_spinner,new ArrayList<Client>());
+                spinnerClients.setAdapter(clientSpinnerAdapter);
 
-        CausalSpinnerAdapter causalSpinnerAdapter = new CausalSpinnerAdapter(getBaseContext(), R.id.causal_spinner,d.getCausal_array());
-        spinnerCausals.setAdapter(causalSpinnerAdapter);
+                CausalSpinnerAdapter causalSpinnerAdapter = new CausalSpinnerAdapter(getBaseContext(), R.id.causal_spinner,new ArrayList<Causal>());
+                spinnerCausals.setAdapter(causalSpinnerAdapter);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //Nasconde la tasetiera all'inizio dell'activity
 
@@ -204,11 +205,17 @@ public class EventCreationActivity extends AppCompatActivity {
     }
 
     public void onSaveButtonClick(){
-
+        /*DEMO VERSION
         currentEvent = new Event(currentID,PrefUtils.getFromPrefs(this, "__USERNAME__", ""),dateView.getText().toString(),timeView.getText().toString(),(Client)spinnerClients.getSelectedItem(),inOffice.isChecked(),note.getText().toString(),(Causal)spinnerCausals.getSelectedItem());
 
         EventTask eventInsertTask = new EventTask(getApplicationContext());
         eventInsertTask.execute();
+        */
+
+        /*DEMO*/
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+            finish();
       }
 
     public void onDeleteButtonClick(){

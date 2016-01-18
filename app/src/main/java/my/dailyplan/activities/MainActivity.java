@@ -176,12 +176,6 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
                     Toast.makeText(this, R.string.app_not_available, Toast.LENGTH_LONG).show();
                 }
                 return true;
-
-//            case R.id.dialog:
-//                Log.e("IIIIIIIII", "è una wuery");  //TODO: NEVER CALLED!?!? WTF
-//                //showDialogYear(item);
-//                return true;
-
             case R.id.action_search:
                 Log.e("IIIIIIIII" ,"è una wuery");
                 return true;
@@ -201,11 +195,8 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             // aggiorna il content principale sostituendo i fragment
-            //Fragment fragment;
             switch(position) {
-                default:                             //Calendario come default_view
-                   // createCalendarFragment(true, 0, 0);
-                   // Log.e("FRAGMENT", "fragment default ");
+                default:
                     break;
                 case 0:
                     getSupportActionBar().show();
@@ -216,11 +207,6 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
                     createDataFragment("MYEVENTS");
                     break;
                 case 2:
-                    /*ProposalFragment fragment = new ProposalFragment();  //TODO: <- call here a methood createProposalFragment with asynctask query inside
-                    FragmentManager fragmentManager = getFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
-                    isProposal = true;*/
-
                     createProposalFragment();
                     break;
                 case 3:
