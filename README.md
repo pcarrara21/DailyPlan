@@ -31,3 +31,5 @@ This idea can be applied even between families or other non-work groups and mayb
 affiliations.
 
 18-01 UPDATE: A demo is available with limited functionality but ultimate layout.
+
+![screenshot](screenshot.png)
